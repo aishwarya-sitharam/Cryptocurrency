@@ -33,12 +33,12 @@ class App extends Component {
         <h1>Cryptocurrency</h1>
         <h4>(Updated every 10 seconds)</h4>
 
-        {Object.keys(this.state.cryptos).map((key) => (
+        {Object.keys(this.state.cryptos).map((key,i) => (
 
-          <div id="crypto-container">
+          <div id="crypto-container" key={i}>
             <span className="left">{key}</span>
-            <span className="right"><NumberFormat value={this.state.cryptos[key].INR} displayType={'text'} decimalPrecision={2} thousandSeparator={true} thousandsGroupStyle="lakh" prefix={'₹'} /></span>
-            <span className="middle"><NumberFormat value={this.state.cryptos[key].USD} displayType={'text'} decimalPrecision={2} thousandSeparator={true} prefix={'$'} /></span>
+            <span className="right"><NumberFormat value={this.state.cryptos[key].INR} displayType={'text'} decimalprecision={2} thousandSeparator={true} thousandsGroupStyle="lakh" prefix={'₹'} /></span>
+            <span className="middle"><NumberFormat value={this.state.cryptos[key].USD} displayType={'text'} decimalprecision={2} thousandSeparator={true} prefix={'$'} /></span>
           </div>
         ))}
       </div>
